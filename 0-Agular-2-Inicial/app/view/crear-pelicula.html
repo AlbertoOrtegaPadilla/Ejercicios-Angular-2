@@ -1,0 +1,23 @@
+<h2>Crear pelicula</h2>
+
+<form #miFormulario="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+        TITULO:
+        <input type="text" #titulo="ngForm" ngControl="titulo" [(ngModel)]="nuevaPelicula.titulo" required minlength="5" />
+        <span *ngIf="!titulo.valid"> No Valido: Minimo 5 lentras.</span>
+    </p>
+
+    <p>
+        DIRECTOR:
+        <input type="text" #director="ngForm" ngControl="director" [(ngModel)]="nuevaPelicula.director" required pattern="[A-Za-z]*" />
+        <span *ngIf="!director.valid"> No Valido: solamente letras.</span>
+    </p>
+
+    <p>
+        AÑO:
+        <input type="text" #emision="ngForm" ngControl="emision" [(ngModel)]="nuevaPelicula.emision" required pattern="[0-9]{4}" />
+        <span *ngIf="!emision.valid">No Valido: solamente numeros(4 digitos).</span>
+    </p>
+
+    <input type="submit" value="Crear pelicula" [disabled]="!miFormulario.form.valid" />
+</form>

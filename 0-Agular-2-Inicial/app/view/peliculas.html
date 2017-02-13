@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <h1>{{titulo}}</h1>
+    <p><strong>"2" Ejercicios de Angular 2:</strong></p>
+
+    <nav>
+        <ul>
+            <li><a [routerLink]="['Peliculas']">Inicio</a></li>
+            <li><a [routerLink]="['CrearPelicula']">Añadir pelicula</a></li>
+            <li><a [routerLink]="['Contacto']">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <router-outlet></router-outlet>
+    <peliculas-footer></peliculas-footer>
+
+</body>
+
+</html>
